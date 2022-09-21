@@ -1,0 +1,32 @@
+.everything{
+  background-color: rgb(21 94 117);
+}
+
+.banner{
+    background-color: rgb(21 94 117);
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(211, 211, 211);
+}
+
+#banner{
+    width: 2116px;
+}
+
+.miportafolio{
+  margin-left: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .banner{
+      display: none;
+      visibility: hidden;
+    }
+  }
