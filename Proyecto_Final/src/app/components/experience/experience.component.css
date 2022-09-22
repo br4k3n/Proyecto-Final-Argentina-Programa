@@ -11,9 +11,10 @@
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 400;
-    color: rgb(207, 252, 254);
+    color: rgb(211, 211, 211);
     text-align: center;
     list-style-position: inside;
+    padding: 1rem;
 }
 
 .experience{
@@ -22,8 +23,18 @@
 
 .h1inside{
     font-size: 30px;
+    padding: 0.5rem;
 }
 
 .h3inside{
     font-size: 25px;
+    padding-bottom: 0.5rem;
+}
+
+.columnas{
+    padding: 2em;
+}
+
+li{
+    padding: 2rem;
 }
