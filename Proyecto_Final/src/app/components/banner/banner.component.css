@@ -14,7 +14,10 @@ h1{
 }
 
 #banner{
-    width: 2116px;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .miportafolio{

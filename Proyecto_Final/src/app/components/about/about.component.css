@@ -15,26 +15,14 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
-    width: 450px;
-    height: 500px;
+    width: 350px;
+    height: 400px;
     background-color: rgb(18, 142, 177);
 }
 
 @media (min-width: 600px){
-    #perfil{
-        visibility: hidden;
-        display: none;
-    }
-};
-
-@media (min-width: 1200px){
-    #nombreytitulo{
-        visibility: hidden;
-        display: none;
-    }
-};
-
-@media (min-width: 1900px){
+    #perfil,
+    #nombreytitulo,
     #celularylocacion{
         visibility: hidden;
         display: none;
