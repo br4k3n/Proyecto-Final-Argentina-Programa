@@ -1,11 +1,22 @@
-.logo{
+.header{
+    position: sticky;
+    top: 0;
     background-color: aqua;
-    margin-top: 0%;
 }
+
 .social{
-    float: right;
-    margin: 10px 30px 10px 0px;
+    margin: 10px;
 }
+
 .botones-social{
-    margin: 8px;
+    margin: 2%;
+}
+
+.login{
+    margin-top: 20px;
+}
+
+.logo{
+    left: 20px;
+    top: 3px;
 }
