@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BannerComponent } from './components/banner/banner.component';
 import { AboutComponent } from './components/about/about.component';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectComponent } from './components/project/project.component';
@@ -20,6 +21,16 @@ import { LoginComponent } from './components/login/login.component';
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experience/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experience/edit-experiencia.component';
+import { NewEducacionComponent } from './components/educacion/new-educacion.component';
+import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
+import { EditSkillComponent } from './components/skills/edit-skill.component';
+import { NewSkillComponent } from './components/skills/new-skill.component';
+import { EditaboutComponent } from './components/about/editabout.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { EditcelubiComponent } from './components/about/editcelubi.component';
+import { EditProjectComponent } from './components/project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +40,7 @@ import { EditExperienciaComponent } from './components/experience/edit-experienc
     BannerComponent,
     AboutComponent,
     ExperienceComponent,
+    EducacionComponent,
     SkillsComponent,
     ProjectComponent,
     FooterComponent,
@@ -36,6 +48,13 @@ import { EditExperienciaComponent } from './components/experience/edit-experienc
     LoginComponent,
     NewExperienciaComponent,
     EditExperienciaComponent,
+    NewEducacionComponent,
+    EditEducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent,
+    EditaboutComponent,
+    EditcelubiComponent,
+    EditProjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +62,9 @@ import { EditExperienciaComponent } from './components/experience/edit-experienc
     NgbModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
 
   ],
   providers: [

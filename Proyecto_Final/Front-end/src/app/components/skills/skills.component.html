@@ -1,122 +1,46 @@
 <div class="skills">
         <div class="container">
+            <div>
+                <h1>Skills</h1>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <button type="button" class="btn btn-info" routerLink="/newskill" *ngIf="isLogged">
+                    Nueva Skill
+                </button>
+            </div>
+
             <div class="row">
-                <div class="col circle">
+                <div class="col circle" *ngFor="let skill of skill">
                     <circle-progress 
-                        [percent]="90"
+                        [percent]="(skill.porcentaje)"
                         [radius]="100"
-                        [showImage]="true"
-                        [imageSrc]="'../assets/iconosSkills/html.png'"
+                        [showImage]="false"
+                        [imageSrc]="''"
+                        [title]="(skill.nombre)"
+                        [showTitle]="true"
+                        [titleColor]="'rgb(207, 252, 254)'"
                         [imageHeight]="60"
                         [imageWidth]="60"
                         [clockwise]="false"
                         [showUnits]="false"
                         [outerStrokeWidth]="16"
                         [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'"
-                        [innerStrokeColor]="'#C7E596'"
+                        [outerStrokeColor]="'#54b0f7'"
+                        [innerStrokeColor]="'#54e7f7'"
                         [animation]="true"
                         [animationDuration]="1000"
                     ></circle-progress>
-                    <span class="subtitle">Conocimientos en HTML</span>
-                </div>
-                <div class="col circle">
-                    <circle-progress 
-                        [percent]="90"
-                        [radius]="100"
-                        [showImage]="true"
-                        [imageSrc]="'../assets/iconosSkills/CSS.png'"
-                        [imageHeight]="60"
-                        [imageWidth]="60"
-                        [clockwise]="false"
-                        [showUnits]="false"
-                        [outerStrokeWidth]="16"
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'"
-                        [innerStrokeColor]="'#C7E596'"
-                        [animation]="true"
-                        [animationDuration]="1000"
-                    ></circle-progress>
-                    <span class="subtitle">Conocimientos en CSS</span>
-                </div>
-                <div class="col circle">
-                    <circle-progress 
-                        [percent]="85"
-                        [radius]="100"
-                        [showImage]="true"
-                        [imageSrc]="'../assets/iconosSkills/js.png'"
-                        [imageHeight]="60"
-                        [imageWidth]="60"
-                        [clockwise]="false"
-                        [showUnits]="false"
-                        [outerStrokeWidth]="16"
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'"
-                        [innerStrokeColor]="'#C7E596'"
-                        [animation]="true"
-                        [animationDuration]="1000"
-                    ></circle-progress>
-                    <span class="subtitle">Conocimientos en Javascript</span>
+                    <span class="subtitle">Conocimientos en {{skill.nombre}}</span>
+                    <div>
+                        <td *ngIf="isLogged"><button class="btn btn-secondary" routerLink='/editskill/{{skill.id}}'><i
+                            class="uil uil-edit-alt"></i></button></td>
+                        <td *ngIf="isLogged"><button class="btn btn-danger" (click)="delete(skill.id)"><i
+                            class="uil uil-trash-alt"></i></button></td>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col circle">
-                    <circle-progress 
-                        [percent]="85"
-                        [radius]="100"
-                        [showImage]="true"
-                        [imageSrc]="'../assets/iconosSkills/git.png'"
-                        [imageHeight]="60"
-                        [imageWidth]="60"
-                        [clockwise]="false"
-                        [showUnits]="false"
-                        [outerStrokeWidth]="16"
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'"
-                        [innerStrokeColor]="'#C7E596'"
-                        [animation]="true"
-                        [animationDuration]="1000"
-                    ></circle-progress>
-                    <span class="subtitle">Manejo de GIT</span>
-                </div>
-                <div class="col circle">
-                    <circle-progress 
-                        [percent]="95"
-                        [radius]="100"
-                        [showImage]="true"
-                        [imageSrc]="'../assets/iconosSkills/eng.png'"
-                        [imageHeight]="60"
-                        [imageWidth]="60"
-                        [clockwise]="false"
-                        [showUnits]="false"
-                        [outerStrokeWidth]="16"
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'"
-                        [innerStrokeColor]="'#C7E596'"
-                        [animation]="true"
-                        [animationDuration]="1000"
-                    ></circle-progress>
-                    <span class="subtitle">Nivel de inglés</span>
-                </div>
-                <div class="col circle">
-                    <circle-progress 
-                        [percent]="80"
-                        [radius]="100"
-                        [showImage]="true"
-                        [imageSrc]="'../assets/iconosSkills/grupal.png'"
-                        [imageHeight]="60"
-                        [imageWidth]="60"
-                        [clockwise]="false"
-                        [showUnits]="false"
-                        [outerStrokeWidth]="16"
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'"
-                        [innerStrokeColor]="'#C7E596'"
-                        [animation]="true"
-                        [animationDuration]="1000"
-                    ></circle-progress>
-                    <span class="subtitle">Trabajo en equipo</span>
-                </div>
+            <div class="notLogged">
+                <h2 class="LetraNot" *ngIf="!isLogged">Inicie sesión para poder modificar las skills</h2>
             </div>
         </div>
 </div>

@@ -1,0 +1,31 @@
+<div class="row">
+    <div>
+        <h1>Educación</h1>
+    </div>
+    <div class="col d-flex justify-content-center" id="botonedu">
+        <button type="button" class="btn btn-info" routerLink="/nuevaedu" *ngIf="isLogged">
+            Agregar nueva educación
+        </button>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let Educacion of educacion">
+                        <td>
+                            <h2>{{Educacion.nombreE}}</h2>
+                        </td>
+                        <td>{{Educacion.descripcionE}}</td>
+                        <td *ngIf="isLogged"><button class="btn btn-secondary" 
+                                routerLink='/editedu/{{Educacion.id}}'><i class="uil uil-edit-alt"></i></button></td>
+                        <td *ngIf="isLogged"><button class="btn btn-danger" (click)="delete(Educacion.id)"><i
+                                    class="uil uil-trash-alt"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="notLogged">
+                <h2 class="LetraNot" *ngIf="!isLogged">Inicie sesión para poder modificar la educación</h2>
+            </div>
+        </div>
+    </div>
+</div>

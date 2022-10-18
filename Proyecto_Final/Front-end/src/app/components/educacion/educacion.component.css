@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 50px;
+    color: rgb(207, 252, 254);
+    padding: 10px 0 10px;
+}
+
+#botonedu{
+    padding: 25px;
+}
+
+table{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+td{
+    color: rgb(207, 252, 254);
+}
+

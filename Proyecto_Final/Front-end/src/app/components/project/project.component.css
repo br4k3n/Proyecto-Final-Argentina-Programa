@@ -1,5 +1,6 @@
-.project{
+.proyecto{
     padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 #titulo{
@@ -28,4 +29,8 @@
 #video{
     box-shadow: 10px 10px 45px #000000;
     box-shadow: ejeX ejeY difumasion color;
+}
+
+#buttonproject{
+    margin-bottom: 20px;
 }
